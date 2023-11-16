@@ -1,4 +1,7 @@
-type User = {
+import { Company } from './company';
+import { Address } from 'cluster';
+
+export interface User {
   id: number;
   name: string;
   username: string;
@@ -7,4 +10,4 @@ type User = {
   phone: string;
   website: string;
   company: Company;
-};
+}
