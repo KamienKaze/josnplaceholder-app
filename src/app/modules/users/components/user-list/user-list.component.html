@@ -1,12 +1,17 @@
 <div class="mat-headline-4 header">
   Users:
 </div>
-<div class="user-list">
+<mat-button-toggle-group class="user-list">
   <div class="user" *ngFor="let user of users">
-    {{user.name}}
-    <mat-divider></mat-divider>
+    <mat-button-toggle class="info-container">
+      <div class="name">{{user.name}}</div>
+      <div class="username">{{user.username}}</div>
+    </mat-button-toggle>
+    <button mat-icon-button class="settings-button" color="primary">
+      <mat-icon>edit</mat-icon>
+    </button>
   </div>
-</div>
+</mat-button-toggle-group>
 <button mat-fab class="add-button">
   <mat-icon>add</mat-icon>
 </button>
