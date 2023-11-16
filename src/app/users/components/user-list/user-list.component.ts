@@ -1,11 +1,10 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { User } from '../../types/user';
-import { UserManagerService } from '../../user-manager.service';
+import { UserManagerService } from '../../services/user-manager.service';
 import { MaterialModule } from '../../../material/material.module';
-
-const GET_ALL_USERS: string = `https://jsonplaceholder.typicode.com/users`;
+import { DrawerToggleManagerService } from '../../../shared/services/drawer-toggle-manager.service';
 
 @Component({
   selector: 'app-user-list',
@@ -17,9 +16,16 @@ const GET_ALL_USERS: string = `https://jsonplaceholder.typicode.com/users`;
 export class UserListComponent {
   public users: User[] = [];
 
-  constructor(userManager: UserManagerService) {
+  constructor(
+    userManager: UserManagerService,
+    private drawerToggleManager: DrawerToggleManagerService,
+  ) {
     userManager.users.subscribe((next: User[]) => {
       this.users = next;
     });
+  }
+
+  public toggleDrawer(): void {
+    this.drawerToggleManager.toggleDrawer(false);
   }
 }

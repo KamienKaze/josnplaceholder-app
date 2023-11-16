@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from './types/user';
+import { User } from '../types/user';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 

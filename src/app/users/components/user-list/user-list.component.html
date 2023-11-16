@@ -1,9 +1,14 @@
-<div class="mat-headline-4 header">
-  Users:
+<div class="header">
+  <div class="mat-headline-4 ">
+    Users:
+  </div>
+  <button mat-fab class="back-button" color="accent" (click)="toggleDrawer()">
+    <mat-icon>east</mat-icon>
+  </button>
 </div>
 <mat-button-toggle-group class="user-list">
   <div class="user" *ngFor="let user of users">
-    <mat-button-toggle class="info-container">
+    <mat-button-toggle class="info-container" [value]="user.id">
       <div class="name">{{user.name}}</div>
       <div class="username">{{user.username}}</div>
     </mat-button-toggle>

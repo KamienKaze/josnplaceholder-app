@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { MaterialModule } from './material/material.module';
 import { MatSidenav } from '@angular/material/sidenav';
 import { UserListComponent } from './users/components/user-list/user-list.component';
+import { DrawerToggleManagerService } from './shared/services/drawer-toggle-manager.service';
 
 @Component({
   selector: 'app-root',
@@ -13,9 +14,15 @@ import { UserListComponent } from './users/components/user-list/user-list.compon
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  @ViewChild('sidenav') sidenav: MatSidenav | null = null;
+  @ViewChild('drawer') drawer: MatSidenav | null = null;
 
-  toggle() {
-    this.sidenav?.toggle();
+  public toggleDrawer(isToggled: boolean): void {
+    this.drawer?.toggle(isToggled);
+  }
+
+  constructor(private drawerToggleManager: DrawerToggleManagerService) {
+    drawerToggleManager.toggle.subscribe((next: boolean) => {
+      this.toggleDrawer(next);
+    });
   }
 }
