@@ -1,9 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { MaterialModule } from './modules/material/material.module';
+import { MaterialModule } from './material/material.module';
 import { MatSidenav } from '@angular/material/sidenav';
-import { UserListComponent } from './modules/users/components/user-list/user-list.component';
+import { UserListComponent } from './users/components/user-list/user-list.component';
 
 @Component({
   selector: 'app-root',
