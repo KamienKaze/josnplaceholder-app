@@ -22,6 +22,8 @@
       position: fixed;
       z-index: 5;
       right: 5%;
+
+      display: none;
     }
   }
 
@@ -74,5 +76,15 @@
 
   .add-button {
 
+  }
+}
+
+@media screen and (max-width: 700px) {
+  :host {
+    .header {
+      .back-button {
+        display: flex;
+      }
+    }
   }
 }
