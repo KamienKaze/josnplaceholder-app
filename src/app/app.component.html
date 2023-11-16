@@ -1,0 +1,12 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" position="end">
+    <div class="mat-headline-4">Users:</div>
+  </mat-drawer>
+
+  <mat-toolbar color="primary">
+    <button type="button" mat-fab (click)="drawer.toggle()">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </mat-toolbar>
+
+</mat-drawer-container>
