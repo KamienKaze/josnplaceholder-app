@@ -5,6 +5,7 @@ import { User } from '../../types/user';
 import { UserManagerService } from '../../services/user-manager.service';
 import { MaterialModule } from '../../../material/material.module';
 import { DrawerToggleManagerService } from '../../../shared/services/drawer-toggle-manager.service';
+import { SelectedUserManagerService } from '../../../shared/services/selected-user-manager.service';
 
 @Component({
   selector: 'app-user-list',
@@ -15,6 +16,7 @@ import { DrawerToggleManagerService } from '../../../shared/services/drawer-togg
 })
 export class UserListComponent {
   public users: User[] = [];
+  public buttonToggleGroupValue: number = 1;
 
   constructor(
     userManager: UserManagerService,
@@ -23,6 +25,12 @@ export class UserListComponent {
     userManager.users.subscribe((next: User[]) => {
       this.users = next;
     });
+
+    SelectedUserManagerService.selectUser(this.buttonToggleGroupValue);
+  }
+
+  public selectUser(selectedUser: number): void {
+    SelectedUserManagerService.selectUser(selectedUser);
   }
 
   public toggleDrawer(): void {
