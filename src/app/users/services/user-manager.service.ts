@@ -16,4 +16,8 @@ export class UserManagerService {
       this.users.next(response);
     });
   }
+
+  public addUserToDatabase(newUser: User): void {
+    this.http.put(GET_ALL_USERS, newUser);
+  }
 }
