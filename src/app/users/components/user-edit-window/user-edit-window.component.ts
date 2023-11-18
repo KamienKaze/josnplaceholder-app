@@ -15,11 +15,11 @@ import { EMPTY_USER } from '../../const/empty-user';
   styleUrl: './user-edit-window.component.scss',
 })
 export class UserEditWindowComponent {
-  user: User = EMPTY_USER;
+  public user: User = EMPTY_USER;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: { userId: number },
-    userManager: UserManagerService,
+    private userManager: UserManagerService,
   ) {
     userManager.getUserById(data.userId);
 
@@ -27,4 +27,6 @@ export class UserEditWindowComponent {
       this.user = next;
     });
   }
+
+  protected readonly EMPTY_USER = EMPTY_USER;
 }
