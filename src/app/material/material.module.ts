@@ -7,6 +7,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -17,6 +20,9 @@ const MaterialComponents = [
   MatSelectModule,
   MatDividerModule,
   MatButtonToggleModule,
+  MatDialogModule,
+  FormsModule,
+  MatInputModule,
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
 <div class="header">
-  <div class="mat-headline-4 ">
+  <div class="mat-headline-4">
     Users:
   </div>
   <button mat-fab class="back-button" color="accent" (click)="toggleDrawer()">
@@ -12,11 +12,11 @@
       <div class="name">{{user.name}}</div>
       <div class="username">{{user.username}}</div>
     </mat-button-toggle>
-    <button mat-icon-button class="settings-button" color="primary">
+    <button mat-icon-button class="settings-button" color="primary" (click)="openUserEdit(user.id)">
       <mat-icon>edit</mat-icon>
     </button>
   </div>
 </mat-button-toggle-group>
-<button mat-fab class="add-button">
+<button mat-fab class="add-button" (click)="openUserEdit(0)">
   <mat-icon>add</mat-icon>
 </button>
