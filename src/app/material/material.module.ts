@@ -11,6 +11,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -25,6 +26,7 @@ const MaterialComponents = [
   FormsModule,
   MatInputModule,
   MatChipsModule,
+  MatCheckboxModule,
 ];
 
 @NgModule({

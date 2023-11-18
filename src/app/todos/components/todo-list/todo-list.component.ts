@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { SelectedUserManagerService } from '../../../shared/services/selected-user-manager.service';
 import { TodoManagerService } from '../../services/todo-manager.service';
 import { Todo } from '../../types/todo';
+import { TodoComponent } from '../todo/todo.component';
 
 @Component({
   selector: 'app-todo-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TodoComponent],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.scss',
 })
