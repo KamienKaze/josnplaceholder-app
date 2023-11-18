@@ -28,10 +28,18 @@ export class UserManagerService {
   }
 
   public addUserToDatabase(newUser: User): void {
-    this.http.post<User>(GET_ALL_USERS, newUser).subscribe();
+    this.http
+      .post<User>(GET_ALL_USERS, newUser)
+      .subscribe((content: User): void => {
+        console.log(content);
+      });
   }
 
   public updateUserInDatabase(updatedUser: User): void {
-    this.http.put(GET_ALL_USERS + '/' + updatedUser.id, updatedUser);
+    this.http
+      .put<User>(GET_ALL_USERS + '/' + updatedUser.id, updatedUser)
+      .subscribe((content: User): void => {
+        console.log(content);
+      });
   }
 }

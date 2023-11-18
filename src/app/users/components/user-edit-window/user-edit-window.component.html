@@ -6,7 +6,6 @@
     <div mat-dialog-title>Add User</div>
   </ng-template>
 </div>
-
 <div class="form-container" mat-dialog-content>
   <div class="user-section">
     <mat-form-field>
@@ -34,7 +33,7 @@
   <div class="company-section">
     <mat-form-field>
       <mat-label>Name</mat-label>
-      <input matInput [(ngModel)]="user.company.bs">
+      <input matInput [(ngModel)]="user.company.name">
     </mat-form-field>
     <mat-form-field>
       <mat-label>Catchphrase</mat-label>
@@ -67,11 +66,11 @@
   <p>Geo</p>
   <div class="geo-section">
     <mat-form-field>
-      <mat-label>Lattitude</mat-label>
+      <mat-label>Latitude</mat-label>
       <input type="number" matInput [(ngModel)]="user.address.geo.lat">
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Longittude</mat-label>
+      <mat-label>Longitude</mat-label>
       <input type="number" matInput [(ngModel)]="user.address.geo.lng">
     </mat-form-field>
   </div>

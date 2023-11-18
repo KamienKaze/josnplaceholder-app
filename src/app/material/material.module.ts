@@ -10,6 +10,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { MatChipsModule } from '@angular/material/chips';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -23,6 +24,7 @@ const MaterialComponents = [
   MatDialogModule,
   FormsModule,
   MatInputModule,
+  MatChipsModule,
 ];
 
 @NgModule({

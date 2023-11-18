@@ -1,6 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  Router,
+  RouterLink,
+  RouterOutlet,
+} from '@angular/router';
 import { MaterialModule } from './material/material.module';
 import { MatSidenav } from '@angular/material/sidenav';
 import { UserListComponent } from './users/components/user-list/user-list.component';
@@ -9,7 +15,13 @@ import { DrawerToggleManagerService } from './shared/services/drawer-toggle-mana
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MaterialModule, UserListComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    MaterialModule,
+    UserListComponent,
+    RouterLink,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -20,8 +32,11 @@ export class AppComponent {
     this.drawer?.toggle(isToggled);
   }
 
-  constructor(private drawerToggleManager: DrawerToggleManagerService) {
-    drawerToggleManager.toggle.subscribe((next: boolean) => {
+  constructor(
+    drawerToggleManager: DrawerToggleManagerService,
+    public router: Router,
+  ) {
+    drawerToggleManager.toggle.subscribe((next: boolean): void => {
       this.toggleDrawer(next);
     });
   }

@@ -21,6 +21,17 @@
 
       display: flex;
       justify-content: flex-end;
+
+      mat-chip-listbox {
+        width: 100%;
+      }
+    }
+
+    .article-section {
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
     }
   }
 }
