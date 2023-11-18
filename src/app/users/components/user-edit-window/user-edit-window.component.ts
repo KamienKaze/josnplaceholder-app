@@ -21,12 +21,20 @@ export class UserEditWindowComponent {
     @Inject(MAT_DIALOG_DATA) public data: { userId: number },
     private userManager: UserManagerService,
   ) {
-    userManager.getUserById(data.userId);
+    data.userId == 0
+      ? (this.user = EMPTY_USER)
+      : userManager.getUserById(data.userId);
 
     userManager.user.subscribe((next: User): void => {
       this.user = next;
     });
   }
 
-  protected readonly EMPTY_USER = EMPTY_USER;
+  public submitButton(): void {
+    this.user.id == 0
+      ? this.userManager.addUserToDatabase(this.user)
+      : this.userManager.updateUserInDatabase(this.user);
+  }
+
+  protected readonly EMPTY_USER: User = EMPTY_USER;
 }
