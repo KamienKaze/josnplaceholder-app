@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SelectedUserManagerService {
-  public static selectedUserId: Subject<number> = new Subject<number>();
+  public static selectedUserId: BehaviorSubject<number> =
+    new BehaviorSubject<number>(0);
 
   public static selectUser(selectedUser: number): void {
     this.selectedUserId.next(selectedUser);
