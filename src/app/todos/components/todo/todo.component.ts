@@ -3,13 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../../../material/material.module';
 import { Todo } from '../../../shared/types/todo';
 import { TodoListEditService } from '../../services/todo-list-edit.service';
-
-const EMPTY_TODO: Todo = {
-  id: 0,
-  userId: 0,
-  title: '',
-  completed: false,
-};
+import { EMPTY_TODO } from '../../const/empty-todo';
 
 @Component({
   selector: 'app-todo',
