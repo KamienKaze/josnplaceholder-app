@@ -12,5 +12,5 @@ import { MaterialModule } from '../../../material/material.module';
 export class TodoComponent {
   @Input('completed') public completed: boolean = false;
   @Input('title') public title: string = 'New Task';
-  @Input('todoId') private id: number = 0;
+  @Input('todoId') public id: number = 0;
 }

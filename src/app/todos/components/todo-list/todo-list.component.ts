@@ -4,6 +4,8 @@ import { SelectedUserDataService } from '../../../shared/services/selected-user-
 import { Todo } from '../../../shared/types/todo';
 import { TodoComponent } from '../todo/todo.component';
 import { MaterialModule } from '../../../material/material.module';
+import { MatDialog } from '@angular/material/dialog';
+import { NewTodoWindowComponent } from '../new-todo-window/new-todo-window.component';
 
 @Component({
   selector: 'app-todo-list',
@@ -15,11 +17,15 @@ import { MaterialModule } from '../../../material/material.module';
 export class TodoListComponent {
   public todoList: Todo[] = [];
 
-  constructor() {
+  constructor(private dialog: MatDialog) {
     SelectedUserDataService.selectedUserTodos.subscribe(
       (next: Todo[]): void => {
         this.todoList = next;
       },
     );
+  }
+
+  public addNewTodo(): void {
+    this.dialog.open(NewTodoWindowComponent);
   }
 }
