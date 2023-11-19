@@ -47,9 +47,4 @@ export class UserListComponent {
   public openUserEdit(userId: number): void {
     this.dialog.open(UserEditWindowComponent, { data: { userId: userId } });
   }
-
-  ngOnDestroy(): void {
-    this.userManager.users.unsubscribe();
-    SelectedUserManagerService.selectedUserId.unsubscribe();
-  }
 }
