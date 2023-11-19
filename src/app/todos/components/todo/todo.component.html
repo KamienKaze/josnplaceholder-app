@@ -1,5 +1,5 @@
-<mat-checkbox color="accent" [(ngModel)]="completed"/>
-<div class="title">{{ title }}</div>
-<button mat-icon-button color="primary" class="delete-button">
+<mat-checkbox color="accent" [(ngModel)]="todo.completed" (click)="updateThisTodo()"/>
+<div class="title">{{ todo.title }}</div>
+<button mat-icon-button color="primary" class="delete-button" (click)="removeThisTodo()">
   <mat-icon>delete_forever</mat-icon>
 </button>
