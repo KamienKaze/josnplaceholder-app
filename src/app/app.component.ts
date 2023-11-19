@@ -6,6 +6,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { UserListComponent } from './users/components/user-list/user-list.component';
 import { DrawerToggleManagerService } from './shared/services/drawer-toggle-manager.service';
 import { AlbumsListComponent } from './albums/components/albums-list/albums-list.component';
+import { SelectedUserDataService } from './shared/services/selected-user-data.service';
 
 @Component({
   selector: 'app-root',
@@ -29,6 +30,7 @@ export class AppComponent {
   }
 
   constructor(
+    selectedUserData: SelectedUserDataService,
     drawerToggleManager: DrawerToggleManagerService,
     public router: Router,
   ) {

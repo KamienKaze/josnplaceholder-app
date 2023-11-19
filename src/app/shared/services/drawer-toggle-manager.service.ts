@@ -7,8 +7,6 @@ import { BehaviorSubject, Subject } from 'rxjs';
 export class DrawerToggleManagerService {
   toggle: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  constructor() {}
-
   public toggleDrawer(isToggled: boolean): void {
     this.toggle.next(isToggled);
   }

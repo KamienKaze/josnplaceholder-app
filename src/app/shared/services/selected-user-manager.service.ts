@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SelectedUserManagerService {
   public static selectedUserId: BehaviorSubject<number> =
-    new BehaviorSubject<number>(0);
+    new BehaviorSubject<number>(1);
 
   public static selectUser(selectedUser: number): void {
     this.selectedUserId.next(selectedUser);

@@ -18,10 +18,10 @@ import { UserEditWindowComponent } from '../user-edit-window/user-edit-window.co
 })
 export class UserListComponent {
   public users: User[] = [];
-  public buttonToggleGroupValue: number = 1;
+  public buttonToggleGroupValue: number = 0;
 
   constructor(
-    userManager: UserManagerService,
+    private userManager: UserManagerService,
     private drawerToggleManager: DrawerToggleManagerService,
     private dialog: MatDialog,
   ) {
@@ -29,18 +29,27 @@ export class UserListComponent {
       this.users = next;
     });
 
-    SelectedUserManagerService.selectUser(this.buttonToggleGroupValue);
+    SelectedUserManagerService.selectedUserId.subscribe(
+      (next: number): void => {
+        this.buttonToggleGroupValue = next;
+      },
+    );
   }
 
   public selectUser(selectedUser: number): void {
     SelectedUserManagerService.selectUser(selectedUser);
   }
 
-  public toggleDrawer(): void {
-    this.drawerToggleManager.toggleDrawer(false);
+  public toggleDrawer(toggle: boolean): void {
+    this.drawerToggleManager.toggleDrawer(toggle);
   }
 
   public openUserEdit(userId: number): void {
     this.dialog.open(UserEditWindowComponent, { data: { userId: userId } });
+  }
+
+  ngOnDestroy(): void {
+    this.userManager.users.unsubscribe();
+    SelectedUserManagerService.selectedUserId.unsubscribe();
   }
 }
