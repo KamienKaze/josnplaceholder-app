@@ -1,16 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  ActivatedRoute,
-  NavigationEnd,
-  Router,
-  RouterLink,
-  RouterOutlet,
-} from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { MaterialModule } from './material/material.module';
 import { MatSidenav } from '@angular/material/sidenav';
 import { UserListComponent } from './users/components/user-list/user-list.component';
 import { DrawerToggleManagerService } from './shared/services/drawer-toggle-manager.service';
+import { AlbumsListComponent } from './albums/components/albums-list/albums-list.component';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +16,7 @@ import { DrawerToggleManagerService } from './shared/services/drawer-toggle-mana
     MaterialModule,
     UserListComponent,
     RouterLink,
+    AlbumsListComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

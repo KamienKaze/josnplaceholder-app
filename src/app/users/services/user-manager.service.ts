@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { User } from '../types/user';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Subject } from 'rxjs';
-import { EMPTY_USER } from '../const/empty-user';
 
 const GET_ALL_USERS: string = `https://jsonplaceholder.typicode.com/users`;
 

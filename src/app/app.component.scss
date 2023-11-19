@@ -20,12 +20,20 @@
       display: flex;
       justify-content: flex-end;
 
+      position: fixed;
+      z-index: 10;
+
       mat-chip-listbox {
         width: 100%;
+      }
+
+      mat-tab-group {
+        margin: 0 auto 0 0;
       }
     }
 
     .article-section {
+      margin: 7rem 0 0 0;
       width: 100%;
 
       display: flex;
@@ -39,12 +47,13 @@
     mat-drawer {
       width: 100%;
     }
-  }
 
-  mat-drawer-container {
-
-    mat-toolbar {
-
+    mat-drawer-container {
+      .article-section {
+        margin: 5rem 0 0 0;
+      }
     }
   }
+
+
 }

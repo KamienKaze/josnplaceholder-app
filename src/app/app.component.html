@@ -2,10 +2,9 @@
   <mat-drawer #drawer class="example-sidenav" mode="over" position="end" opened="false">
     <app-user-list></app-user-list>
   </mat-drawer>
-
   <mat-toolbar color="primary">
     <mat-chip-listbox [multiple]="false">
-      <mat-chip-option routerLink="todos" [selected]="router.url == '/todos'" #todos [selectable]="!todos.selected" color="accent">Todos</mat-chip-option>
+      <mat-chip-option #todos [selectable]="!todos.selected" color="accent">Todos</mat-chip-option>
       <mat-chip-option routerLink="albums" [selected]="router.url == '/albums'" #albums [selectable]="!albums.selected" color="accent">Albums</mat-chip-option>
     </mat-chip-listbox>
     <button type="button" mat-fab (click)="toggleDrawer(true)">
