@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  width: 100%;
+
+  border: gray 1px solid;
+  border-radius: 5px;
+
+  .title {
+    font-size: large;
+    margin-left: 0.5rem;
+  }
+
+  .delete-button {
+    margin-left: auto;
+  }
+}

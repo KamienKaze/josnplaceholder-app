@@ -1,1 +1,5 @@
-<p>todo-list works!</p>
+<div class="mat-headline-4">Tasks:</div>
+<app-todo *ngFor="let todo of todoList" [completed]="todo.completed" title="{{todo.title}}"/>
+<button mat-fab class="add-todo-button">
+  <mat-icon>add</mat-icon>
+</button>
