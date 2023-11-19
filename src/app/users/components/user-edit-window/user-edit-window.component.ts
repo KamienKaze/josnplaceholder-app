@@ -15,6 +15,7 @@ import { EMPTY_USER } from '../../const/empty-user';
   styleUrl: './user-edit-window.component.scss',
 })
 export class UserEditWindowComponent {
+  protected readonly EMPTY_USER: User = EMPTY_USER;
   public user: User = EMPTY_USER;
 
   constructor(
@@ -35,6 +36,4 @@ export class UserEditWindowComponent {
       ? this.userManager.addUserToDatabase(this.user)
       : this.userManager.updateUserInDatabase(this.user);
   }
-
-  protected readonly EMPTY_USER: User = EMPTY_USER;
 }
