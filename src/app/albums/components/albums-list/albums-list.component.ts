@@ -1,19 +1,25 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SelectedUserManagerService } from '../../../shared/services/selected-user-manager.service';
+
+import { AlbumComponent } from '../album/album.component';
+import { SelectedUserDataService } from '../../../shared/services/selected-user-data.service';
+import { Album } from '../../../shared/types/album';
 
 @Component({
   selector: 'app-albums-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AlbumComponent],
   templateUrl: './albums-list.component.html',
   styleUrl: './albums-list.component.scss',
 })
 export class AlbumsListComponent {
-  public selectedUserId: number = 0;
+  public albumList: Album[] = [];
+
   constructor() {
-    SelectedUserManagerService.selectedUserId.subscribe((next) => {
-      this.selectedUserId = next;
-    });
+    SelectedUserDataService.selectedUserAlbums.subscribe(
+      (next: Album[]): void => {
+        this.albumList = next;
+      },
+    );
   }
 }
