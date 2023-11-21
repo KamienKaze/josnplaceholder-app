@@ -1,0 +1,32 @@
+:host {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .photo {
+    width: 20%;
+    margin: 2rem;
+    padding: 0.4rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+    user-select: none;
+
+    .thumbnail {
+      width: 100%;
+    }
+
+    .title {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  :host {
+
+  .photo {
+    width: 70%;
+  }
+}
+}

@@ -1,3 +1,10 @@
 @import "./../../../shared/scss-mixins/list";
 
 @include list;
+
+:host {
+  .add-todo-button {
+    position: fixed;
+    bottom: 2rem;
+  }
+}
