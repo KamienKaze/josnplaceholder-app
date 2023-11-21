@@ -1,0 +1,24 @@
+:host {
+  .photo {
+    margin: 2rem;
+    padding: 0.4rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+    user-select: none;
+    cursor: pointer;
+
+    .thumbnail {
+      width: 100%;
+      -webkit-user-drag: none;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+

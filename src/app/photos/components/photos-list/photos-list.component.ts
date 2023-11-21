@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Params } from '@angular/router';
 import { PhotosManagerService } from '../../services/photos-manager.service';
 import { Photo } from '../../../shared/types/photo';
+import { PhotoComponent } from '../photo/photo.component';
 
 @Component({
   selector: 'app-photos-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, PhotoComponent],
   templateUrl: './photos-list.component.html',
   styleUrl: './photos-list.component.scss',
 })
