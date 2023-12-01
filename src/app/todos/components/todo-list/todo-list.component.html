@@ -1,4 +1,4 @@
-<div class="mat-headline-4">Tasks:</div>
+<p class="mat-headline-4">Tasks:</p>
 <app-todo *ngFor="let todo of todoList" [todo]="todo" title="{{todo.title}}"/>
 <button mat-fab class="add-todo-button" (click)="addNewTodo()">
   <mat-icon>add</mat-icon>

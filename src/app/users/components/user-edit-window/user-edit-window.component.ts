@@ -22,7 +22,7 @@ export class UserEditWindowComponent {
     @Inject(MAT_DIALOG_DATA) public data: { userId: number },
     private userManager: UserManagerService,
   ) {
-    data.userId == 0
+    data.userId === 0
       ? (this.user = EMPTY_USER)
       : userManager.getUserById(data.userId);
 
@@ -35,5 +35,9 @@ export class UserEditWindowComponent {
     this.user.id == 0
       ? this.userManager.addUserToDatabase(this.user)
       : this.userManager.updateUserInDatabase(this.user);
+  }
+
+  ngOnDestroy(): void {
+    this.userManager.user.unsubscribe();
   }
 }

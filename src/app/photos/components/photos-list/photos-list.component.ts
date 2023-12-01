@@ -17,7 +17,7 @@ export class PhotosListComponent {
 
   constructor(
     activatedRoute: ActivatedRoute,
-    photosManager: PhotosManagerService,
+    private photosManager: PhotosManagerService,
   ) {
     activatedRoute.params.subscribe((params: Params): void => {
       photosManager.photos.subscribe((next: Photo[]): void => {

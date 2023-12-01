@@ -1,9 +1,9 @@
 <div class="header">
   <div *ngIf="user != EMPTY_USER; else addUser">
-    <div mat-dialog-title>Edit User</div>
+    <p mat-dialog-title>Edit User</p>
   </div>
   <ng-template #addUser>
-    <div mat-dialog-title>Add User</div>
+    <p mat-dialog-title>Add User</p>
   </ng-template>
 </div>
 <div class="form-container" mat-dialog-content>
